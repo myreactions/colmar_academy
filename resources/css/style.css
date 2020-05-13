@@ -1,9 +1,123 @@
 @charset "UTF-8";
 
 /* Universal Styles */
-
+html {
+  font-size: 16px;
+}
+body {
+  background-color: white;
+  font-family: 'Roboto', sans-serif;
+}
+h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
 /* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  background-color: white;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+}
+header .logo {
+  display: flex;
+  align-items: center;
+  font-family: 'Jost', sans-serif;
+  font-size: 1.5rem;
+  padding-left: 1.5rem;
+  height: 100%;
+}
+header .logo img {
+  display: inline-block;
+  height: 3rem;
+  padding-top: .3rem;
+}
+.bold {
+  font-weight: bold;
+}
+nav {
+  padding-right: 1.5rem;
+}
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin-left: 1rem;
+}
 
+/* Banner */
+main {
+  position: relative;
+  top: 4rem;
+}
+.banner-section {
+  background-color: #CCCCCC;
+  display: flex;
+  padding: 2.5rem 1.5rem;
+}
+.banner-section img {
+  width: 60%;
+}
+.banner-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 25%;
+  padding-left: 3rem;
+  line-height: 1.25;
+}
+.banner-text h2,
+h3,
+button {
+  margin: 1.5rem 0;
+}
+.banner-text button {
+  width: 85%;
+  background-color: black;
+  color: white;
+  font-size: 1.25rem;
+  padding: 1rem 0;
+  border: none;
+  cursor: pointer;
+}
+
+
+/*.banner-section .img {
+  background-image: url("../images/banner.jpg");
+  background-repeat: no-repeat:
+  background-position: center;
+  background-size: cover;
+  width: 60%;
+}  */
+
+/* Info */
+.info-section {
+  background-color:
+}
+
+/* Courses */
+.courses-section {
+  background-color: #CCCCCC;
+}
+
+/* Thesis */
+.thesis-section {
+
+}
+.thesis-section video {
+  width: 60%;
+}
 
 /* Footer */
