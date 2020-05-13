@@ -162,22 +162,28 @@ button {
   height: auto;
   padding: 1rem;
 }
-.info .text {
+.info-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-right: 2rem;
 }
-.info .text p {
+.info-text p {
   line-height: 1.5;
 }
-.info .text h3,
-p,
-span {
+.info-text h3 {
   margin: 0;
   padding: 0.5rem 0;
 }
-.info .text a {
+.info-text p {
+  margin: 0;
+  padding: 0.5rem 0;
+}
+.info-text span {
+  margin: 0;
+  padding: 0.5rem 0;
+}
+.info-text a {
   color: dodgerblue;
 }
 
@@ -215,8 +221,10 @@ span {
 .course .text h3 {
   margin: 0;
 }
-.course .text h3,
-p {
+.course .text h3 {
+  padding: 0.5rem;
+}
+.course .text p {
   padding: 0.5rem;
 }
 
@@ -231,56 +239,25 @@ p {
 }
 .thesis-subsection {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }
 .main-thesis {
-  max-width: 60%;
+  width: 60%;
+  padding: 2rem 1.5rem;
 }
 .main-thesis video {
   width: 100%;
-  padding: 1.5rem;
-  padding-top: 0;
+  height: auto;
+  display: block;
 }
 .thesis-container {
   width: 40%;
-  max-height: 400px;
-  margin: 1rem 0;
-  border-radius: 3px;
-  overflow-y: scroll;
-  -ms-overflow-style: none;
-}
-.thesis-container::-webkit-scrollbar {
-  display: none;
-}
-.thesis {
-  display: flex;
-  width: 100%;
-  /*border-top: 1px solid grey;
-  border-bottom: 1px solid grey;*/
-  margin: 2px 0;
-  border-radius: 3px;
-}
-.thesis:hover {
-  background-color: #CCCCCC;
 }
 .thesis img {
-  max-width: 35%;
   height: auto;
+  max-width: 35%;
   padding: 1rem;
-}
-.thesis .text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-right: 2rem;
-}
-.thesis .text p {
-  line-height: 1.5;
-}
-.thesis .text h3,
-p {
-  margin: 0;
-  padding: 0.5rem 0;
 }
 
 
