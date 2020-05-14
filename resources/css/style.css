@@ -1,17 +1,13 @@
 @charset "UTF-8";
 
 /* NOTES
-light grey background
 text color
-image quality
-yandex images for higher quality
-hover animation on info
-hover animation on courses
-make site responsive
+logo text
 center thesis text
+padding / margin around text
 transparent film on hover
-variable for all repeated colors
 header nav hover animation / halo
+make site responsive
 mobile site
 
 */
@@ -21,7 +17,7 @@ html {
   font-size: 16px;
 }
 body {
-  background-color: rgb(243,245,245);
+  background-color: var(--light-grey);
   font-family: 'Roboto', sans-serif;
   color: var(--text-color);
   position: relative;
@@ -72,6 +68,7 @@ header {
   z-index: 1;
   width: 100%;
   border-bottom: 1px solid gainsboro;
+  box-shadow: 0 2.5px 5px rgba(0,0,0,0.19);
 }
 header .logo {
   display: flex;
@@ -99,6 +96,14 @@ nav ul li {
   display: inline-block;
   list-style: none;
   margin-left: 1rem;
+}
+header a {
+  transition: all 0.5s ease;
+  padding: 1rem 0;
+}
+header a:hover {
+  color: dodgerblue;
+  border-bottom: 1px solid dodgerblue;
 }
 
 /* Banner */
@@ -170,19 +175,18 @@ button {
 .info-container {
   width: 40%;
   margin: 1rem 0;
-  border-radius: 3px;
   overflow-y: scroll;
+  border: 1px solid gainsboro;
+  border-radius: 4px;
+  background-color: white;
 }
 .info {
   display: flex;
   width: 100%;
-  /*border-top: 1px solid grey;
-  border-bottom: 1px solid grey;*/
-  margin: 2px 0;
   border-radius: 3px;
 }
 .info:hover {
-  background-color: #CCCCCC;
+  background-color: var(--dark-grey);
 }
 .info img {
   max-width: 35%;
@@ -297,8 +301,10 @@ button {
 .thesis-container {
   width: 40%;
   margin: 1rem 0;
-  border-radius: 3px;
   overflow-y: scroll;
+  border: 1px solid gainsboro;
+  border-radius: 4px;
+  background-color: white;
 }
 .thesis {
   padding-left: 1rem;
@@ -307,10 +313,9 @@ button {
   flex-direction: row;
   align-items: center;
   border-radius: 3px;
-  margin: 2px 0;
 }
 .thesis:hover {
-  background-color: #CCCCCC;
+  background-color: var(--dark-grey);
   cursor: pointer;
 }
 .thesis img {
@@ -347,4 +352,12 @@ footer {
 .footer-nav ul li {
   display: inline-block;
   margin-left: 1rem;
+}
+footer a {
+  transition: all 0.5s ease;
+  padding: 1rem 0;
+}
+footer a:hover {
+  color: gainsboro;
+  border-bottom: 1px solid gainsboro;
 }
