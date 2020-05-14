@@ -2,14 +2,17 @@
 
 /* NOTES
 light grey background
-white header
-blue link color
 text color
 image quality
+yandex images for higher quality
 hover animation on info
 hover animation on courses
 make site responsive
 center thesis text
+transparent film on hover
+variable for all repeated colors
+header nav hover animation / halo
+mobile site
 
 */
 
@@ -18,10 +21,14 @@ html {
   font-size: 16px;
 }
 body {
-  background-color: white;
+  background-color: rgb(243,245,245);
   font-family: 'Roboto', sans-serif;
-  color: #404040;
+  color: var(--text-color);
   position: relative;
+  --dark-grey: rgb(216,216,216);
+  --medium-grey: rgb(234,235,236);
+  --light-grey: rgb(243,245,245);
+  --text-color: rgb(74,74,74);
 }
 h2 {
   font-size: 2.5rem;
@@ -32,8 +39,23 @@ h3 {
   font-weight: bold;
 }
 a {
-  color: inherit;
+  color: var(--text-color);
   text-decoration: none;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: rgba(241, 241, 241, 1);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  border: 2px solid rgba(241, 241, 241, 1);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* Header */
@@ -43,9 +65,10 @@ header {
   align-items: center;
   height: 4rem;
   background-color: white;
-  /*position: fixed;*/
+  position: fixed;
   z-index: 1;
   width: 100%;
+  border-bottom: 1px solid gainsboro;
 }
 header .logo {
   display: flex;
@@ -64,7 +87,7 @@ header .logo img {
   font-weight: bold;
 }
 .light {
-  color: #9C9C9C;
+  color: var(--dark-grey);
 }
 nav {
   padding-right: 1.5rem;
@@ -81,7 +104,7 @@ main {
   top: 4rem;
 }
 .banner-section {
-  background-color: #CCCCCC;
+  background-color: var(--dark-grey);
   display: flex;
   padding: 2rem 1.5rem;
 }
@@ -103,20 +126,24 @@ button {
 }
 .banner-text button {
   width: 85%;
-  background-color: #404040;
+  background-color: var(--text-color);
   color: white;
   font-size: 1.25rem;
   padding: 1rem 0;
   border: none;
   cursor: pointer;
 }
+.banner-text button:hover {
+
+}
 
 /* Info */
 .info-section {
-  background-color: white;
+  background-color: var(--light-grey);
   display: flex;
   justify-content: space-between;
   max-height: 48rem;
+  margin-right: 2px;
 }
 .main-info {
   width: 60%;
@@ -141,11 +168,6 @@ button {
   margin: 1rem 0;
   border-radius: 3px;
   overflow-y: scroll;
-  -ms-overflow-style: none;
-  /*border-left: 1px solid grey;*/
-}
-.info-container::-webkit-scrollbar {
-  display: none;
 }
 .info {
   display: flex;
@@ -191,7 +213,7 @@ button {
 
 /* Courses */
 .courses-section {
-  background-color: #CCCCCC;
+  background-color: var(--medium-grey);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -210,6 +232,7 @@ button {
   width: 31%;
   background-color: white;
   margin: 1rem;
+  border-radius: 3px;
 }
 .course:hover {
   transform: scale(1.025);
@@ -219,6 +242,8 @@ button {
 .course img {
   height: auto;
   max-width: 100%;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 .course .text {
   padding: 1rem;
@@ -240,6 +265,8 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-right: 2px;
+  background-color: var(--light-grey);
 }
 .thesis-section .heading {
   margin: 3rem 0;
@@ -259,15 +286,15 @@ button {
   height: auto;
   display: block;
 }
+.main-thesis .text {
+  width: 95%;
+  line-height: 1.5;
+}
 .thesis-container {
   width: 40%;
   margin: 1rem 0;
   border-radius: 3px;
   overflow-y: scroll;
-  -ms-overflow-style: none;
-}
-.thesis-container::-webkit-scrollbar {
-  display: none;
 }
 .thesis {
   padding-left: 1rem;
@@ -280,6 +307,7 @@ button {
 }
 .thesis:hover {
   background-color: #CCCCCC;
+  cursor: pointer;
 }
 .thesis img {
   height: auto;
@@ -303,14 +331,14 @@ button {
 footer {
   position: relative;
   top: 4rem;
-  background-color: white;
+  background-color: var(--light-grey);
   height: 6rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 1.25rem;
   margin: 0 0.25rem;
-  border-top: 1px solid grey;
+  border-top: 1px solid gainsboro;
 }
 .footer-nav ul li {
   display: inline-block;
