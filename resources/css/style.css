@@ -42,6 +42,9 @@ a {
   color: var(--text-color);
   text-decoration: none;
 }
+::selection {
+  background-color: var(--dark-grey);
+}
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -162,6 +165,7 @@ button {
 .quote-author {
   display: block;
   padding: 2rem 0.5rem;
+  font-weight: bold;
 }
 .info-container {
   width: 40%;
