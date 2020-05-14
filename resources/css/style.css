@@ -9,6 +9,7 @@ image quality
 hover animation on info
 hover animation on courses
 make site responsive
+center thesis text
 
 */
 
@@ -160,7 +161,8 @@ button {
 .info img {
   max-width: 35%;
   height: auto;
-  padding: 1rem;
+  margin: 1rem;
+  border-radius: 3px;
 }
 .info-text {
   display: flex;
@@ -209,6 +211,11 @@ button {
   background-color: white;
   margin: 1rem;
 }
+.course:hover {
+  transform: scale(1.025);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  cursor: pointer;
+}
 .course img {
   height: auto;
   max-width: 100%;
@@ -241,6 +248,7 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  max-height: 43rem;
 }
 .main-thesis {
   width: 60%;
@@ -253,11 +261,41 @@ button {
 }
 .thesis-container {
   width: 40%;
+  margin: 1rem 0;
+  border-radius: 3px;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+}
+.thesis-container::-webkit-scrollbar {
+  display: none;
+}
+.thesis {
+  padding-left: 1rem;
+  padding-right: ;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 3px;
+  margin: 2px 0;
+}
+.thesis:hover {
+  background-color: #CCCCCC;
 }
 .thesis img {
   height: auto;
   max-width: 35%;
-  padding: 1rem;
+  margin: 1rem;
+  margin-left: 0;
+  border-radius: 3px;
+}
+.thesis .text {
+  padding-right: 3rem;
+}
+.thesis .text h3 {
+  line-height: 1.25;
+}
+.thesis .text p {
+  line-height: 1.5;
 }
 
 
