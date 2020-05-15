@@ -5,8 +5,8 @@ NOTES
 
 make site responsive
 mobile site
-fix max-height
-fix courses wrap
+copy syntax for info to thesis images
+fix border radius for img and img container
 */
 
 /* Universal Styles */
@@ -108,6 +108,11 @@ header a:hover {
   color: var(--blue-text);
   border-bottom: 1px solid var(--blue-text);
 }
+@media only screen and (max-width: 1024px) {
+  header nav {
+    display: none;
+  }
+}
 
 
 /* Banner */
@@ -120,14 +125,18 @@ main {
   display: flex;
   padding: 2rem 1.5rem;
 }
-.banner-section img {
+.banner-image-container {
   width: 60%;
 }
+.banner-section img {
+  max-width: 100%;
+  height: auto;
+}
 .banner-text {
+  max-width: 37%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 25%;
   padding-left: 3rem;
   line-height: 1.25;
 }
@@ -158,8 +167,8 @@ h3,
   background-color: var(--light-grey);
   display: flex;
   justify-content: space-between;
-  height: auto;
   margin-right: 2px;
+  position: relative;
 }
 .main-info {
   width: 60%;
@@ -170,15 +179,18 @@ h3,
 }
 .main-info .text {
   width: 90%;
-  line-height: 1.5;
 }
 .main-info h2 {
-  padding-top: 2rem;
-  padding-bottom: 1.5rem;
+  padding: 2rem 0;
+}
+.main-info p {
+  line-height: 1.5;
+  padding: 0;
 }
 .quote-author {
   display: block;
-  padding: 2rem 0.5rem;
+  padding-top: 2rem;
+  padding-left: 0.5rem;
 }
 .info-container {
   width: 40%;
@@ -187,19 +199,24 @@ h3,
   border-radius: 4px;
   background-color: white;
   overflow-y: scroll;
+  max-height: 48vw;
 }
 .info {
   display: flex;
+  flex-direction: row;
   width: 100%;
   border-radius: 3px;
 }
 .info:hover {
   background-color: var(--dark-grey);
 }
-.info img {
+.info-img-container {
   max-width: 35%;
-  height: auto;
   margin: 1rem;
+}
+.info img {
+  max-width: 100%;
+  height: auto;
   border-radius: 3px;
 }
 .info-text {
@@ -207,7 +224,7 @@ h3,
   flex-direction: column;
   justify-content: center;
   padding-left: 0.5rem;
-  padding-right: 2rem;
+  padding-right: 1rem;
 }
 .info-text h3, p, span {
   margin: 0;
@@ -241,10 +258,11 @@ h3,
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 2rem 4.5rem;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
 }
 .course {
-  width: 31%;
+  width: 30%;
   background-color: white;
   margin: 1rem;
   border-radius: 3px;
@@ -289,7 +307,6 @@ h3,
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  max-height: 44rem;
 }
 .main-thesis {
   width: 60%;
@@ -312,6 +329,7 @@ h3,
   border: 1px solid var(--border-color);
   border-radius: 4px;
   background-color: white;
+  max-height: 45vw;
 }
 .thesis {
   display: flex;
@@ -323,11 +341,14 @@ h3,
   background-color: var(--dark-grey);
   cursor: pointer;
 }
-.thesis img {
-  height: auto;
+.thesis-img-container {
   max-width: 35%;
   margin: 1rem;
   margin-left: 0;
+}
+.thesis img {
+  max-width: 100%;
+  height: auto;
   border-radius: 3px;
 }
 .thesis .text {
