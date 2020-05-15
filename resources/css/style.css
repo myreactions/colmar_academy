@@ -1,15 +1,11 @@
 @charset "UTF-8";
 
 /* NOTES
-text color
-logo text
 center thesis text
 padding / margin around text
 transparent film on hover
-header nav hover animation / halo
 make site responsive
 mobile site
-
 */
 
 /* Universal Styles */
@@ -18,13 +14,14 @@ html {
 }
 body {
   background-color: var(--light-grey);
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: var(--text-color);
   position: relative;
   --dark-grey: rgb(216,216,216);
   --medium-grey: rgb(234,235,236);
   --light-grey: rgb(243,245,245);
   --text-color: rgb(74,74,74);
+  --blue-text: rgb(30, 144, 255);
 }
 h2 {
   font-size: 2.5rem;
@@ -73,21 +70,25 @@ header {
 header .logo {
   display: flex;
   align-items: center;
-  font-family: 'Jost', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1.5rem;
   padding-left: 1.5rem;
   height: 100%;
 }
 header .logo img {
   display: inline-block;
-  height: 3rem;
+  height: 2.5rem;
   padding-top: .3rem;
+}
+.name {
+  color: black;
+  padding-left: 0.5rem;
 }
 .bold {
   font-weight: bold;
 }
 .light {
-  color: var(--dark-grey);
+  color: var(--dark-gre);
 }
 nav {
   padding-right: 1.5rem;
@@ -102,8 +103,8 @@ header a {
   padding: 1rem 0;
 }
 header a:hover {
-  color: dodgerblue;
-  border-bottom: 1px solid dodgerblue;
+  color: var(--blue-text);
+  border-bottom: 1px solid var(--blue-text);
 }
 
 /* Banner */
@@ -216,7 +217,7 @@ button {
   padding: 0.5rem 0;
 }
 .info-text a {
-  color: dodgerblue;
+  color: var(--blue-text);
 }
 
 /* Courses */
@@ -335,7 +336,6 @@ button {
   line-height: 1.5;
 }
 
-
 /* Footer */
 footer {
   position: relative;
@@ -354,10 +354,9 @@ footer {
   margin-left: 1rem;
 }
 footer a {
-  transition: all 0.5s ease;
+  transition: color 0.5s ease;
   padding: 1rem 0;
 }
 footer a:hover {
-  color: gainsboro;
-  border-bottom: 1px solid gainsboro;
+  color: rgba(74,74,74, 0.6);
 }
