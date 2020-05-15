@@ -3,10 +3,10 @@
 /*
 NOTES
 
-beautify CSS
 make site responsive
 mobile site
 fix max-height
+fix courses wrap
 */
 
 /* Universal Styles */
@@ -21,13 +21,9 @@ body {
   --dark-grey: rgb(216,216,216);
   --medium-grey: rgb(234,235,236);
   --light-grey: rgb(243,245,245);
-  --text-color: rgb(74,74,74);
+  --border-color: rgb(220, 220, 220);
   --text-color: rgb(48,48,48);
   --blue-text: rgb(30, 144, 255);
-  --border-color: rgb(220, 220, 220);
-}
-.em {
-  font-style: italic;
 }
 h2 {
   font-size: 2.5rem;
@@ -41,6 +37,12 @@ a {
   color: var(--text-color);
   text-decoration: none;
 }
+.bold {
+  font-weight: bold;
+}
+.italic {
+  font-style: italic;
+}
 ::selection {
   background-color: var(--dark-grey);
 }
@@ -53,30 +55,30 @@ a {
 }
 ::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
   border: 2px solid rgba(241, 241, 241, 1);
+  border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+
 /* Header */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 4rem;
-  background-color: white;
   position: fixed;
   z-index: 1;
   width: 100%;
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
   border-bottom: 1px solid var(--border-color);
   box-shadow: 0 2.5px 5px rgba(0,0,0,0.19);
 }
 header .logo {
   display: flex;
   align-items: center;
-  font-family: 'Open Sans', sans-serif;
   font-size: 1.5rem;
   padding-left: 1.5rem;
   height: 100%;
@@ -90,12 +92,6 @@ header .logo img {
   color: black;
   padding-left: 0.5rem;
 }
-.bold {
-  font-weight: bold;
-}
-.light {
-  color: var(--dark-gre);
-}
 nav {
   padding-right: 1.5rem;
 }
@@ -105,13 +101,14 @@ nav ul li {
   margin-left: 1rem;
 }
 header a {
-  transition: all 0.5s ease;
   padding: 1rem 0;
+  transition: all 0.5s ease;
 }
 header a:hover {
   color: var(--blue-text);
   border-bottom: 1px solid var(--blue-text);
 }
+
 
 /* Banner */
 main {
@@ -149,16 +146,19 @@ h3,
   padding: 1rem 0;
   border: none;
   cursor: pointer;
+  transition: background-color 0.5s ease;
 }
 .banner-button:hover {
+  background-color: rgba(48,48,48, 0.8);
 }
+
 
 /* Info */
 .info-section {
   background-color: var(--light-grey);
   display: flex;
   justify-content: space-between;
-  max-height: 48rem;
+  height: auto;
   margin-right: 2px;
 }
 .main-info {
@@ -170,6 +170,7 @@ h3,
 }
 .main-info .text {
   width: 90%;
+  line-height: 1.5;
 }
 .main-info h2 {
   padding-top: 2rem;
@@ -178,16 +179,14 @@ h3,
 .quote-author {
   display: block;
   padding: 2rem 0.5rem;
-  font-weight: bold;
 }
 .info-container {
   width: 40%;
-  margin: 1rem 0;
-  margin-top: 2rem;
-  overflow-y: scroll;
+  margin: 2rem 0 1rem 0;
   border: 1px solid var(--border-color);
   border-radius: 4px;
   background-color: white;
+  overflow-y: scroll;
 }
 .info {
   display: flex;
@@ -210,24 +209,17 @@ h3,
   padding-left: 0.5rem;
   padding-right: 2rem;
 }
+.info-text h3, p, span {
+  margin: 0;
+  padding: 0.5rem 0;
+}
 .info-text p {
   line-height: 1.5;
-}
-.info-text h3 {
-  margin: 0;
-  padding: 0.5rem 0;
-}
-.info-text p {
-  margin: 0;
-  padding: 0.5rem 0;
-}
-.info-text span {
-  margin: 0;
-  padding: 0.5rem 0;
 }
 .info-text a {
   color: var(--blue-text);
 }
+
 
 /* Courses */
 .courses-section {
@@ -280,9 +272,7 @@ h3,
 .course .text p {
   padding: 0.5rem;
 }
-.italic {
-  font-style: italic;
-}
+
 
 /* Thesis */
 .thesis-section {
@@ -324,9 +314,9 @@ h3,
   background-color: white;
 }
 .thesis {
-  padding-left: 1rem;
   display: flex;
   flex-direction: row;
+  padding-left: 1rem;
   border-radius: 3px;
 }
 .thesis:hover {
