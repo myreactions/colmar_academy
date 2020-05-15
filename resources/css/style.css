@@ -1,27 +1,33 @@
 @charset "UTF-8";
 
-/* NOTES
-center thesis text
-padding / margin around text
-transparent film on hover
+/*
+NOTES
+
+beautify CSS
 make site responsive
 mobile site
+fix max-height
 */
 
 /* Universal Styles */
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 body {
-  background-color: var(--light-grey);
   font-family: 'Open Sans', sans-serif;
+  background-color: var(--light-grey);
   color: var(--text-color);
-  position: relative;
   --dark-grey: rgb(216,216,216);
   --medium-grey: rgb(234,235,236);
   --light-grey: rgb(243,245,245);
   --text-color: rgb(74,74,74);
+  --text-color: rgb(48,48,48);
   --blue-text: rgb(30, 144, 255);
+  --border-color: rgb(220, 220, 220);
+}
+.em {
+  font-style: italic;
 }
 h2 {
   font-size: 2.5rem;
@@ -64,7 +70,7 @@ header {
   position: fixed;
   z-index: 1;
   width: 100%;
-  border-bottom: 1px solid gainsboro;
+  border-bottom: 1px solid var(--border-color);
   box-shadow: 0 2.5px 5px rgba(0,0,0,0.19);
 }
 header .logo {
@@ -80,7 +86,7 @@ header .logo img {
   height: 2.5rem;
   padding-top: .3rem;
 }
-.name {
+.company-name {
   color: black;
   padding-left: 0.5rem;
 }
@@ -130,10 +136,12 @@ main {
 }
 .banner-text h2,
 h3,
-button {
+.banner-button {
   margin: 1.5rem 0;
 }
-.banner-text button {
+.banner-button {
+  display: inline-block;
+  text-align: center;
   width: 85%;
   background-color: var(--text-color);
   color: white;
@@ -142,8 +150,7 @@ button {
   border: none;
   cursor: pointer;
 }
-.banner-text button:hover {
-
+.banner-button:hover {
 }
 
 /* Info */
@@ -176,8 +183,9 @@ button {
 .info-container {
   width: 40%;
   margin: 1rem 0;
+  margin-top: 2rem;
   overflow-y: scroll;
-  border: 1px solid gainsboro;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   background-color: white;
 }
@@ -199,6 +207,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-left: 0.5rem;
   padding-right: 2rem;
 }
 .info-text p {
@@ -226,9 +235,14 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
-.heading {
-  margin-top: 2rem;
+#courses {
+  position: absolute;
+  top: -4rem;
+}
+.courses-section .heading {
+  margin-top: 3rem;
 }
 .courses-container {
   display: flex;
@@ -261,12 +275,13 @@ button {
 }
 .course .text h3 {
   margin: 0;
-}
-.course .text h3 {
   padding: 0.5rem;
 }
 .course .text p {
   padding: 0.5rem;
+}
+.italic {
+  font-style: italic;
 }
 
 /* Thesis */
@@ -284,11 +299,12 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  max-height: 43rem;
+  max-height: 44rem;
 }
 .main-thesis {
   width: 60%;
   padding: 2rem 1.5rem;
+  padding-top: 0;
 }
 .main-thesis video {
   width: 100%;
@@ -301,18 +317,16 @@ button {
 }
 .thesis-container {
   width: 40%;
-  margin: 1rem 0;
+  margin-bottom: 1rem;
   overflow-y: scroll;
-  border: 1px solid gainsboro;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   background-color: white;
 }
 .thesis {
   padding-left: 1rem;
-  padding-right: ;
   display: flex;
   flex-direction: row;
-  align-items: center;
   border-radius: 3px;
 }
 .thesis:hover {
@@ -328,12 +342,19 @@ button {
 }
 .thesis .text {
   padding-right: 3rem;
+  padding-left: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .thesis .text h3 {
   line-height: 1.25;
+  margin: 0;
 }
 .thesis .text p {
   line-height: 1.5;
+  padding-top: 1rem;
+  margin: 0;
 }
 
 /* Footer */
@@ -347,7 +368,7 @@ footer {
   align-items: center;
   padding: 0 1.25rem;
   margin: 0 0.25rem;
-  border-top: 1px solid gainsboro;
+  border-top: 1px solid var(--border-color);
 }
 .footer-nav ul li {
   display: inline-block;
