@@ -5,6 +5,10 @@ NOTES
 
 make site responsive
 mobile site
+mobile course hover - description popup
+button onclick color change
+mobile site no scroll on body
+mobile no x-axis overflow
 */
 
 /* Universal Styles */
@@ -125,7 +129,17 @@ header a:hover {
   .mobile-nav ul {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header a {
+    padding: 0.5rem;
+  }
+  header a:hover {
+    border: none;
+  }
+  ::-webkit-scrollbar {
+    display: none;
   }
 }
 
@@ -140,7 +154,7 @@ main {
   display: flex;
   padding: 2rem 1.5rem;
 }
-.banner-image-container {
+.banner-img-container {
   width: 60%;
 }
 .banner-section img {
@@ -174,6 +188,31 @@ h3,
 }
 .banner-button:hover {
   background-color: rgba(48,48,48, 0.8);
+}
+@media only screen and (max-width: 540px) {
+  .banner-section {
+    flex-direction: column;
+    padding: 0;
+    padding-bottom: 1rem;
+  }
+  .banner-img-container {
+    width: 100%;
+  }
+  .banner-text {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+  .banner-text h2,
+  h3,
+  .banner-button {
+    margin: 1rem 0;
+  }
+  .banner-text h2 {
+    width: 80%;
+  }
+  .banner-button {
+    width: 100%;
+  }
 }
 
 
@@ -235,6 +274,9 @@ h3,
   height: auto;
   border-radius: 3px;
 }
+.info .mobile-img {
+  display: none;
+}
 .info-text {
   display: flex;
   flex-direction: column;
@@ -252,7 +294,36 @@ h3,
 .info-text a {
   color: var(--blue-text);
 }
-
+@media only screen and (max-width: 540px) {
+  .main-info {
+    display: none;
+  }
+  .info-container {
+    width: 100%;
+    max-height: 85vh;
+  }
+  .info-container::-webkit-scrollbar {
+    display: block;
+  }
+  .info {
+    flex-direction: column;
+  }
+  .info-img-container {
+    max-width: 100%;
+  }
+  .info-img-container img {
+    display: none;
+  }
+  .info .mobile-img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .info-text {
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+  }
+}
 
 /* Courses */
 .courses-section {
@@ -268,13 +339,15 @@ h3,
 }
 .courses-section .heading {
   margin-top: 3rem;
+  margin-bottom: 2rem;
 }
 .courses-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 2rem 1rem 3rem 1rem;
+  padding: 0 1rem;
+  padding-bottom: 3rem;
 }
 .course {
   width: 30%;
@@ -305,6 +378,39 @@ h3,
 }
 .course .text p {
   padding: 0.5rem;
+}
+.mobile-courses-container {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 85%;
+  padding: 2rem 0;
+}
+.mobile-course {
+  display: block:
+  width: 100%;
+  padding: 1rem;
+  margin: 0.5rem;
+  border-radius: 3px;
+  background-color: var(--dark-grey);
+  font-weight: bold;
+  transition: all 0.25s ease;
+}
+.mobile-course:hover {
+  transform: scale(1.025);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+@media only screen and (max-width: 540px) {
+  .courses-section .heading {
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
+  .courses-container {
+    display: none;
+  }
+  .mobile-courses-container {
+    display: flex;
+  }
 }
 
 
@@ -380,6 +486,20 @@ h3,
   line-height: 1.5;
   padding-top: 1rem;
 }
+@media only screen and (max-width: 540px) {
+  .thesis-section .heading {
+    margin: 2rem 0;
+  }
+  .main-thesis {
+    width: auto;
+  }
+  .main-thesis .text {
+    display: none;
+  }
+  .thesis-container {
+    display: none;
+  }
+}
 
 
 /* Footer */
@@ -405,4 +525,9 @@ footer a {
 }
 footer a:hover {
   color: rgba(74,74,74, 0.6);
+}
+@media only screen and (max-width: 540px) {
+  .footer-nav {
+    display: none;
+  }
 }
