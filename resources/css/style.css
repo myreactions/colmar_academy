@@ -1,16 +1,5 @@
 @charset "UTF-8";
 
-/*
-NOTES
-
-make site responsive
-mobile site
-mobile course hover - description popup
-button onclick color change
-mobile site no scroll on body
-mobile no x-axis overflow
-*/
-
 /* Universal Styles */
 html {
   font-size: 16px;
@@ -50,6 +39,7 @@ a {
 }
 ::-webkit-scrollbar {
   width: 10px;
+  height: 10px;
 }
 ::-webkit-scrollbar-track {
   background-color: rgba(241, 241, 241, 1);
@@ -105,6 +95,11 @@ nav ul li {
 .mobile-nav {
   display: none;
 }
+.mobile-nav ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 header a {
   padding: 1rem 0;
   transition: all 0.5s ease;
@@ -113,30 +108,36 @@ header a:hover {
   color: var(--blue-text);
   border-bottom: 1px solid var(--blue-text);
 }
-@media only screen and (max-width: 1024px) {
-  header .logo {
-    display: none;
-  }
+@media only screen and (max-width: 768px) {
   header nav {
     display: none;
   }
-}
-@media only screen and (max-width: 540px) {
   .mobile-nav {
     display: inline-block;
     width: 100%;
   }
   .mobile-nav ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-evenly;
+  }
+  .mobile-logo {
+    display: none;
   }
   header a {
     padding: 0.5rem;
   }
   header a:hover {
     border: none;
+  }
+}
+@media only screen and (max-width: 540px) {
+  header .logo {
+    display: none;
+  }
+  .mobile-nav ul {
+    justify-content: space-around;
+  }
+  .mobile-logo {
+    display: inline-block;
   }
   ::-webkit-scrollbar {
     display: none;
@@ -189,6 +190,33 @@ h3,
 }
 .banner-button:hover {
   background-color: rgba(48,48,48, 0.8);
+}
+.banner-button:active {
+  transform: scale(0.975);
+}
+@media only screen and (max-width: 1024px) {
+  .banner-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 1 0rem;
+  }
+  .banner-img-container {
+    width: 90%;
+    padding: 0;
+    margin: 0 2rem;
+  }
+  .banner-text {
+    max-width: 80%;
+    align-items: center;
+    padding: 0;
+    text-align: center;
+  }
+  .break {
+    display: none;
+  }
+  .banner-button {
+    width: 70%;
+  }
 }
 @media only screen and (max-width: 540px) {
   .banner-section {
@@ -297,12 +325,32 @@ h3,
 .info-text a {
   color: var(--blue-text);
 }
+@media only screen and (max-width: 1024px) {
+  .info-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .main-info {
+    width: 90%;
+  }
+  .info-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 98%;
+    max-height: 80vh;
+    overflow-y: hidden;
+  }
+  .info {
+    max-width: 70%;
+  }
+}
 @media only screen and (max-width: 540px) {
   .main-info {
     display: none;
   }
   .info-container {
-    width: 100%;
+    width: 98%;
     max-height: 85vh;
   }
   .info-container::-webkit-scrollbar {
@@ -403,8 +451,10 @@ h3,
   transform: scale(1.025);
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
-.mobile-course:hover .courses-container {
-  display: block;
+@media only screen and (max-width: 1024px) {
+  .course {
+    width: 45%;
+  }
 }
 @media only screen and (max-width: 540px) {
   .courses-section .heading {
@@ -491,6 +541,27 @@ h3,
 .thesis .text p {
   line-height: 1.5;
   padding-top: 1rem;
+}
+@media only screen and (max-width: 1024px) {
+  .thesis-subsection {
+    flex-direction: column;
+    align-items: center;
+  }
+  .main-thesis {
+    width: 90%;
+  }
+  .thesis-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 98%;
+    max-height: 80vh;
+    margin-bottom: 2rem;
+    overflow-y: hidden;
+  }
+  .thesis {
+    max-width: 70%;
+  }
 }
 @media only screen and (max-width: 540px) {
   .thesis-section .heading {
