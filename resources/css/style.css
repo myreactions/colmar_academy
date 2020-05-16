@@ -5,8 +5,6 @@ NOTES
 
 make site responsive
 mobile site
-copy syntax for info to thesis images
-fix border radius for img and img container
 */
 
 /* Universal Styles */
@@ -100,6 +98,9 @@ nav ul li {
   list-style: none;
   margin-left: 1rem;
 }
+.mobile-nav {
+  display: none;
+}
 header a {
   padding: 1rem 0;
   transition: all 0.5s ease;
@@ -109,8 +110,22 @@ header a:hover {
   border-bottom: 1px solid var(--blue-text);
 }
 @media only screen and (max-width: 1024px) {
+  header .logo {
+    display: none;
+  }
   header nav {
     display: none;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .mobile-nav {
+    display: inline-block;
+    width: 100%;
+  }
+  .mobile-nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
 }
 
@@ -206,6 +221,7 @@ h3,
   flex-direction: row;
   width: 100%;
   border-radius: 3px;
+  transition: all 0.25s ease;
 }
 .info:hover {
   background-color: var(--dark-grey);
@@ -258,14 +274,14 @@ h3,
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  padding-top: 2rem;
-  padding-bottom: 3rem;
+  padding: 2rem 1rem 3rem 1rem;
 }
 .course {
   width: 30%;
   background-color: white;
   margin: 1rem;
   border-radius: 3px;
+  transition: all 0.25s ease;
 }
 .course:hover {
   transform: scale(1.025);
@@ -324,7 +340,6 @@ h3,
 }
 .thesis-container {
   width: 40%;
-  margin-bottom: 1rem;
   overflow-y: scroll;
   border: 1px solid var(--border-color);
   border-radius: 4px;
@@ -334,8 +349,8 @@ h3,
 .thesis {
   display: flex;
   flex-direction: row;
-  padding-left: 1rem;
   border-radius: 3px;
+  transition: all 0.25s ease;
 }
 .thesis:hover {
   background-color: var(--dark-grey);
@@ -344,7 +359,6 @@ h3,
 .thesis-img-container {
   max-width: 35%;
   margin: 1rem;
-  margin-left: 0;
 }
 .thesis img {
   max-width: 100%;
@@ -352,8 +366,8 @@ h3,
   border-radius: 3px;
 }
 .thesis .text {
-  padding-right: 3rem;
-  padding-left: 0.25rem;
+  padding-right: 1rem;
+  padding-left: 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -365,8 +379,8 @@ h3,
 .thesis .text p {
   line-height: 1.5;
   padding-top: 1rem;
-  margin: 0;
 }
+
 
 /* Footer */
 footer {
