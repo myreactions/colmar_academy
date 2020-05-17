@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+/* NOTES
+
+*/
+
 /* Universal Styles */
 html {
   font-size: 16px;
@@ -100,11 +104,11 @@ nav ul li {
   flex-direction: row;
   align-items: center;
 }
-header a {
+header nav a {
   padding: 1rem 0;
   transition: all 0.5s ease;
 }
-header a:hover {
+header nav a:hover {
   color: var(--blue-text);
   border-bottom: 1px solid var(--blue-text);
 }
@@ -122,10 +126,10 @@ header a:hover {
   .mobile-logo {
     display: none;
   }
-  header a {
+  header nav a {
     padding: 0.5rem;
   }
-  header a:hover {
+  header nav a:hover {
     border: none;
   }
 }
